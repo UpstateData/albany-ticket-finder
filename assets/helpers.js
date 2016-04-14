@@ -6,6 +6,6 @@ Handlebars.registerHelper('formatDate', function(date) {
 
 // Helper function to format citatsion number.
 Handlebars.registerHelper('formatCitationNumber', function(number) {
-	var citation = number || 'Not found.';
+	var citation = number || 'Not found';
 	return citation;
 });
