@@ -1,0 +1,16 @@
+body {
+  margin-top: 80px;
+}
+.btn {
+  border: 1px solid black;
+}
+.working, .info {
+  text-align: center;
+}
+.error {
+  border-color: red;
+}
+#results {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
