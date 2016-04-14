@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Quickly and easily find outstanding tickets in the City of Albany, NY">
+    <meta name="author" content="Mark Headd">
+    <link rel="shortcut icon" href="">
+    <title>Capital Tickets</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.6/united/bootstrap.min.css" rel="stylesheet">
+    <style>
+      body {
+        margin-top: 80px;
+      }
+      .btn {
+        border: 1px solid black;
+      }
+      .working, .intro {
+        text-align: center;
+      }
+      .error {
+        border-color: red;
+      }
+      #results {
+        margin-top: 10px;
+        margin-bottom: 10px;
+      }
+    </style>
+
+  </head>
+
+  <body role="document">
+
+    <!-- Fixed navbar -->
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/">Capital Tickets</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="#about">About</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+
+    <div class="container theme-showcase" role="main">
+      <div class="page-header">
+        <h1>Find a Ticket</h1>
+      </div>
+      <p class="intro">
+        Findp outstanding parking tickets in the Albany, NY. 
+      </p>
+    <div class="input-group">
+      <span class="input-group-btn">
+        <button class="btn btn-default" id="search" type="button">Search</button>
+      </span>
+      <input type="text" id="plate" class="form-control" placeholder="Plate #">
+    </div>
+    <div id="results"></div>
+    <div class="alert alert-warning working" role="alert">
+        <p>Fetching data...</p>
+    </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.2/handlebars.runtime.js"/></script>
+    <script src="details.tpl.js"></script>
+    <script>
+
+      // Helper function to render a date in a template.
+      Handlebars.registerHelper('formatDate', function(date) {
+        var d = new Date(date)
+        return d.getMonth()+1 + '/' + d.getDate() + '/' + d.getFullYear();
+      });
+
+      // Components of API URL to look up parking violations.
+      var url_base = 'https://data.albanyny.gov/resource/474r-rd62.json?license_plate_number=';
+
+      // Method to make API call.
+      function requestJSON(url, callback) {
+        $.ajax({
+          url: url,
+          beforeSend: function() {
+            clearContents();
+            $(".working").show();
+          },
+          complete: function(xhr) {
+             $(".working").hide();
+            callback.call(null, xhr.responseJSON);
+          }
+        });
+      }
+
+      // Clear the contents of the results section & search field.
+      function clearContents() {
+        $("#results").empty();
+        $("#plate").val('');
+      }
+
+      $(document).ready(function() {
+        
+        // Hide the lookup prompt on page load.
+        $('.working').hide();
+
+        // Handler for search button
+        $("#search").click(function() {
+          var searchText = $("#plate").val();
+            if(searchText == "") {
+              $(".form-control").addClass("error");
+            }
+            else {
+              url = url_base + searchText;
+              requestJSON(url, function(json) {
+                if(json.length == 0) {
+                  $("#results").append('<p class="intro">No tickets found.</p>');
+                }
+                else {
+                  details = Handlebars.templates.details({ Details : json[0] });
+                  $("#results").append(details);  
+                }
+              });
+            }
+        });
+
+        // Handler for focus on test input field.
+        $("#plate").focus(function(){
+          $(this).removeClass("error");
+        });
+
+      });
+
+    </script>
+  </body>
+</html>
