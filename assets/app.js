@@ -16,16 +16,16 @@ $.ajax({
 });
 }
 
-// Clear the contents of the results section & search field.
+// Clear the contents of the results section, about section & search field.
 function clearContents() {
-$("#results").empty();
-$(".about").hide();
-$("#plate").val('');
+  $("#results").empty();
+  $(".about").hide();
+  $("#plate").val('');
 }
 
 $(document).ready(function() {
 
-  // Hide the lookup prompt on page load.
+  // Hide the lookup prompt & about section on page load.
   $('.working, .about').hide();
 
   // Handler for search button
@@ -56,11 +56,12 @@ $(document).ready(function() {
     }
   });
 
-  // Handler for focus on test input field.
+  // Handler for focus on text input field.
   $("#plate").focus(function(){
     $(this).removeClass("error");
   });
 
+  // Show the about section.
   $("#about").click(function() {
     $('.about').show();
   });
