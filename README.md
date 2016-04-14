@@ -13,5 +13,5 @@ Install handlbars:
 Modify (if desired) and precompile templates:
 
 ```bash
-~$ handlebars templates/details.handlebars -f details.tpl.js
+~$ handlebars templates/details.handlebars -f assets/details.tpl.js
 ```
