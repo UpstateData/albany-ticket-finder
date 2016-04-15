@@ -10,7 +10,7 @@ Install handlbars:
 ~$ npm install handlebars -g
 ```
 
-Modify (if desired) and precompile templates:
+Modify (if desired) and precompile template:
 
 ```bash
 ~$ handlebars templates/details.handlebars -f assets/details.tpl.js
