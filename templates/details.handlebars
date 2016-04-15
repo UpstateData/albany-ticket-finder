@@ -1,5 +1,8 @@
 <table class="table table-bordered table-striped ">
 	<tr><td class="col-xs-2">Plate Number</td><td>{{Details.license_plate_number}}</td></tr>
+	<tr><td class="col-xs-2">First Name</td><td>{{{toTitleCase Details.first_name}}}</td></tr>
+	<tr><td class="col-xs-2">Middle Name</td><td>{{{toTitleCase Details.middle_name}}}</td></tr>
+	<tr><td class="col-xs-2">last Name</td><td>{{{toTitleCase Details.last_name}}}</td></tr>
 	<tr><td class="col-xs-2">Citation Number:</td><td>{{{formatCitationNumber Details.citation}}}</td></tr>
 	<tr><td class="col-xs-2">Issue Date</td><td>{{{formatDate Details.issue_date}}}</td></tr>
 	<tr><td class="col-xs-2">Citation Amount</td><td>${{Details.citation_amount}}</td></tr>

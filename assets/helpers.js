@@ -6,6 +6,13 @@ Handlebars.registerHelper('formatDate', function(date) {
 
 // Helper function to format citatsion number.
 Handlebars.registerHelper('formatCitationNumber', function(number) {
-	var citation = number || 'Not found';
-	return citation;
+	if(typeof(number) != 'undefined') {
+		return number;
+	}
+	return 'Not found';
+});
+
+// Helper function to titlecase strings
+Handlebars.registerHelper('toTitleCase', function(str) {
+    return str.replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
 });
