@@ -41,7 +41,7 @@ $(document).ready(function() {
             $("#results").append('<p class="info">No tickets found.</p>');
           }
           else {
-            details = Handlebars.templates.details({ Details : json[0] });
+            details = Handlebars.templates.details({ Details : json });
             $("#results").append(details);  
           }
         });
