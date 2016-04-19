@@ -16,4 +16,4 @@ Modify (if desired) and precompile template:
 ~$ handlebars templates/details.handlebars -f assets/details.tpl.js
 ```
 
-For test messaging support, see the [SMS branch](https://github.com/mheadd/albany-ticket-finder/tree/sms).
+For test messaging support, see the [SMS branch](https://github.com/mheadd/albany-ticket-finder-sms).
