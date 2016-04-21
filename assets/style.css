@@ -1,6 +1,10 @@
 body {
   margin-top: 80px;
 }
+#results {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
 .btn {
   border: 1px solid black;
 }
@@ -10,7 +14,6 @@ body {
 .inputerror {
   border-color: red;
 }
-#results {
-  margin-top: 10px;
-  margin-bottom: 10px;
+.hide {
+	display: none;
 }

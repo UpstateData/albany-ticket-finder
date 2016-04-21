@@ -7,14 +7,14 @@ $.ajax({
   url: url,
   beforeSend: function() {
     clearContents();
-    $('.alert-warning').show();
+    $('.alert-warning').removeClass('hide');
   },
   complete: function(xhr) {
-    $('.alert-warning').hide();
+    $('.alert-warning').addClass('hide');
     callback.call(null, xhr.responseJSON);
   },
   error: function() {
-    $('.alert-danger').show();
+    $('.alert-danger').removeClass('hide');
   }
 });
 }
@@ -22,14 +22,11 @@ $.ajax({
 // Clear the contents of the results section, about & search field.
 function clearContents() {
   $('#results').empty();
-  $('.alert, .about').hide();
+  $('.alert, .about').addClass('hide');
   $('#plate').val('');
 }
 
 $(document).ready(function() {
-
-  // Hide the lookup prompt & about section on page load.
-  $('.alert, .about').hide();
 
   // Handler for search button
   $('#search').click(function() {
@@ -41,7 +38,7 @@ $(document).ready(function() {
         url = url_base + searchText;
         requestJSON(url, function(json) {
           if(json.length == 0) {
-            $('.alert-success').show();
+            $('.alert-success').removeClass('hide');
           }
           else {
             var details = Handlebars.templates.details({ Details : json });
@@ -66,7 +63,7 @@ $(document).ready(function() {
 
   // Show the about section.
   $('#about').click(function() {
-    $('.about').show();
+    $('.about').removeClass('hide');
   });
 
 });
