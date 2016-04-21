@@ -35,7 +35,8 @@ $(document).ready(function() {
         $('.form-control').addClass('inputerror');
       }
       else {
-        url = url_base + searchText;
+        url = url_base + searchText.toUpperCase();
+        console.log('*** ' + url);
         requestJSON(url, function(json) {
           if(json.length == 0) {
             $('.alert-success').removeClass('hide');
