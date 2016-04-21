@@ -4,10 +4,10 @@ body {
 .btn {
   border: 1px solid black;
 }
-.working, .info {
+.alert, .about, .info {
   text-align: center;
 }
-.error {
+.inputerror {
   border-color: red;
 }
 #results {

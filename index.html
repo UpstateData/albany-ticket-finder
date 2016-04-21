@@ -44,10 +44,16 @@
         <input type="text" id="plate" class="form-control" placeholder="FJN3315">
       </div>
       <div id="results"></div>
-      <div class="alert alert-warning working" role="alert">
-          <p>Fetching data...</p>
+      <div class="alert alert-warning" role="alert">
+          <p>Looking for tickets...</p>
       </div>
-      <div class="about info">
+      <div class="alert alert-success" role="alert">
+        <p>No tickets found.</p>
+      </div>
+      <div class="alert alert-danger" role="alert">
+          <p>An error occured. Please try your search again later.</p>
+      </div>
+      <div class="about">
         <p>Built with <a href="https://data.albanyny.gov/City-Finances/Outstanding-Parking-Tickets-04-1-16/474r-rd62">open data</a>. Not affiliated with the City of Albany. Code on <a href="https://github.com/mheadd/albany-ticket-finder">GitHub</a>.</p>
       </div>
     </div>
