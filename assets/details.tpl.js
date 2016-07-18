@@ -9,7 +9,7 @@ templates['details'] = template({"1":function(container,depth0,helpers,partials,
     + ((stack1 = (helpers.toTitleCase || (depth0 && depth0.toTitleCase) || alias1).call(depth0,(depth0 != null ? depth0.first_name : depth0),{"name":"toTitleCase","hash":{},"data":data})) != null ? stack1 : "")
     + "</td></tr>\n		<tr><td class=\"col-xs-2\">Middle Name</td><td>"
     + ((stack1 = (helpers.toTitleCase || (depth0 && depth0.toTitleCase) || alias1).call(depth0,(depth0 != null ? depth0.middle_name : depth0),{"name":"toTitleCase","hash":{},"data":data})) != null ? stack1 : "")
-    + "</td></tr>\n		<tr><td class=\"col-xs-2\">last Name</td><td>"
+    + "</td></tr>\n		<tr><td class=\"col-xs-2\">Last Name</td><td>"
     + ((stack1 = (helpers.toTitleCase || (depth0 && depth0.toTitleCase) || alias1).call(depth0,(depth0 != null ? depth0.last_name : depth0),{"name":"toTitleCase","hash":{},"data":data})) != null ? stack1 : "")
     + "</td></tr>\n		<tr><td class=\"col-xs-2\">Citation Number:</td><td>"
     + ((stack1 = (helpers.formatCitationNumber || (depth0 && depth0.formatCitationNumber) || alias1).call(depth0,(depth0 != null ? depth0.citation : depth0),{"name":"formatCitationNumber","hash":{},"data":data})) != null ? stack1 : "")
