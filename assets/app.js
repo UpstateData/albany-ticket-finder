@@ -1,5 +1,5 @@
 // Components of API URL to look up parking violations.
-var url_base = 'https://data.albanyny.gov/resource/cuea-fqf4.json?license_plate_number=';
+var url_base = 'https://data.albanyny.gov/resource/yvmu-66f7.json?license_plate_number=';
 
 // Method to make API call.
 function requestJSON(url, callback) {
