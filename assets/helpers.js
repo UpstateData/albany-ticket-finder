@@ -1,6 +1,7 @@
 // Helper function to render a date in a template.
 Handlebars.registerHelper('formatDate', function(date) {
-	return date.substring(0,2) + '/' + date.substring(2,4) + '/' + date.substring(4,8);
+	var citation_date = date.length < 6 ? '0' + date : date;
+	return citation_date.substring(0,2) + '/' + citation_date.substring(2,4) + '/' + citation_date.substring(4,8);
 });
 
 // Helper function to format citatsion number.
