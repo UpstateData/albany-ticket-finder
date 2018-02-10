@@ -1,7 +1,7 @@
 (function() {
   var template = Handlebars.template, templates = Handlebars.templates = Handlebars.templates || {};
 templates['details'] = template({"1":function(container,depth0,helpers,partials,data) {
-    var stack1, helper, alias1=depth0 != null ? depth0 : {}, alias2=helpers.helperMissing, alias3="function", alias4=container.escapeExpression;
+    var stack1, helper, alias1=depth0 != null ? depth0 : (container.nullContext || {}), alias2=helpers.helperMissing, alias3="function", alias4=container.escapeExpression;
 
   return "	<table class=\"table table-bordered table-striped \">\n		<tr><td class=\"col-xs-2\"><strong>Plate Number</strong></td><td><strong>"
     + alias4(((helper = (helper = helpers.vehicle_plate_number || (depth0 != null ? depth0.vehicle_plate_number : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"vehicle_plate_number","hash":{},"data":data}) : helper)))
@@ -16,7 +16,7 @@ templates['details'] = template({"1":function(container,depth0,helpers,partials,
     + "</td></tr>\n		<tr><td class=\"col-xs-2\">Citation Number:</td><td>"
     + ((stack1 = (helpers.formatCitationNumber || (depth0 && depth0.formatCitationNumber) || alias2).call(alias1,(depth0 != null ? depth0.citation_number : depth0),{"name":"formatCitationNumber","hash":{},"data":data})) != null ? stack1 : "")
     + "</td></tr>\n		<tr><td class=\"col-xs-2\">Issue Date</td><td>"
-    + ((stack1 = (helpers.formatDate || (depth0 && depth0.formatDate) || alias2).call(alias1,(depth0 != null ? depth0.citation_date_mmddyy : depth0),{"name":"formatDate","hash":{},"data":data})) != null ? stack1 : "")
+    + ((stack1 = (helpers.formatDate || (depth0 && depth0.formatDate) || alias2).call(alias1,(depth0 != null ? depth0.citationdate_mmddyy : depth0),{"name":"formatDate","hash":{},"data":data})) != null ? stack1 : "")
     + "</td></tr>\n		<tr><td class=\"col-xs-2\">Citation Amount</td><td>$"
     + alias4(((helper = (helper = helpers.citation_amount || (depth0 != null ? depth0.citation_amount : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"citation_amount","hash":{},"data":data}) : helper)))
     + "</td></tr>\n		<tr><td class=\"col-xs-2\">Fees &amp; Fines</td><td>$"
@@ -27,6 +27,6 @@ templates['details'] = template({"1":function(container,depth0,helpers,partials,
 },"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
     var stack1;
 
-  return ((stack1 = helpers.each.call(depth0 != null ? depth0 : {},(depth0 != null ? depth0.Details : depth0),{"name":"each","hash":{},"fn":container.program(1, data, 0),"inverse":container.noop,"data":data})) != null ? stack1 : "");
+  return ((stack1 = helpers.each.call(depth0 != null ? depth0 : (container.nullContext || {}),(depth0 != null ? depth0.Details : depth0),{"name":"each","hash":{},"fn":container.program(1, data, 0),"inverse":container.noop,"data":data})) != null ? stack1 : "");
 },"useData":true});
 })();
