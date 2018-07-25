@@ -22,7 +22,7 @@ templates['details'] = template({"1":function(container,depth0,helpers,partials,
     + "</td></tr>\n		<tr><td class=\"col-xs-2\">Fees &amp; Fines</td><td>$"
     + alias4(((helper = (helper = helpers.fees_fines || (depth0 != null ? depth0.fees_fines : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"fees_fines","hash":{},"data":data}) : helper)))
     + "</td></tr>\n		<tr><td class=\"col-xs-2\">Remaining Balance</td><td>$"
-    + alias4(((helper = (helper = helpers.remainingbalance || (depth0 != null ? depth0.remainingbalance : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"remainingbalance","hash":{},"data":data}) : helper)))
+    + alias4(((helper = (helper = helpers.remaining_balance || (depth0 != null ? depth0.remaining_balance : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"remaining_balance","hash":{},"data":data}) : helper)))
     + "</td></tr>\n	</table>\n";
 },"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
     var stack1;
